@@ -1,6 +1,5 @@
 
-# 🌿 Stochastic Ecohydrological Rainfall–Runoff Modeling
-
+# 🌿 The Extended JPM: Statistical Delineation of Transition Zones and Design Event Selection
 This repository contains code for for a semi-distributed stochastic ecohydrological model for characterizing the long-term statistics of watershed processes---progressing stochastic ecohydrology from the point scale to the watershed scale. It integrates storm event rainfall-runoff (here based on the SCS-CNx method), vegetation-driven evapotranspiration, and soil moisture dynamics to characterize the statistics of runoff generation, baseflow, and evapotranpsiration at the watershed scale. The modeling framework is designed for scenario analysis, calibration with USGS data, and integration with remote sensing and reanalysis datasets.
 
 The model and supporting code were developed by Mark S. Bartlett, Elizabeth Cultra, and Amilcare Porporato as part of ongoing research in probabilistic ecohydrology and watershed-scale hydrologic prediction.
