@@ -243,7 +243,6 @@ This extended JPM framework builds upon and contributes to several research area
 
 **Mark S. Bartlett** (Corresponding Author)  
 The Water Institute, Baton Rouge, Louisiana, USA  
-Princeton University, Princeton, New Jersey, USA  
 Email: Mark.Bartlett@gmail.com
 
 **Muthu Narayanaswamy** (Corresponding Author)  
