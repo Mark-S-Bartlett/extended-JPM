@@ -6,13 +6,13 @@ This repository contains code and data supporting the paper:
 
 ## Overview
 
-Compound flooding from the combined effects of extreme storm surge, rainfall, and river flows poses significant risks to infrastructure and communities—as demonstrated by hurricanes Isaac and Harvey. This repository implements a formal extension of the Joint Probability Method (JPM), the foundation of coastal surge risk analysis, to incorporate hydrologic drivers for quantifying compound flood risk and statistically delineating compound flood transition zones (CFTZs).
+Compound flooding from the combined effects of extreme storm surge, rainfall, and river flows poses significant risks to infrastructure and communities—as demonstrated by hurricanes Isaac and Harvey. This repository contains the code for the data analysis and figures documenting the pilot study demonstrating a formal extension of the Joint Probability Method (JPM). This extemsion includes linking the foundation of coastal surge risk analysis to incorporate hydrologic drivers for quantifying compound flood risk, statistically delineating compound flood transition zones (CFTZs), and determining design events.
 
 ### Key Innovations
 
-1. **Unified Probabilistic Framework**: Integrates the likelihood of flood response (not just driver co-occurrence) for both tropical and non-tropical storms within a single probabilistic structure
+1. **Unified Probabilistic Framework**: Integrates the likelihood of the compound flood response from coastal drivers and hydrologic drivers (not just driver co-occurrence) for both tropical and non-tropical storms within a single probabilistic structure
 
-2. **Statistical Transition Zone Delineation**: Provides rigorous statistical definition of compound flood transition zones based on exceedance probabilities across multiple return periods, rather than event-specific analysis
+2. **Statistical Transition Zone Delineation**: Provides statistical definition of compound flood transition zones based on exceedance probabilities across multiple return periods, rather than event-specific analysis
 
 3. **Design Storm Selection**: Enables systematic identification of design storms that produce specified return period flood depths, moving beyond design based solely on driver likelihoods
 
@@ -151,42 +151,6 @@ pip install numpy pandas matplotlib scipy geopandas rasterio shapely jupyter
 jupyter notebook
 ```
 
-## Usage
-
-### Generating AEP Rasters
-
-Run the Python scripts in the `notebooks/` directory to generate annual exceedance probability rasters for each flood mechanism:
-
-```python
-# Generate storm surge AEP rasters
-python notebooks/TC_event_AEP_storm_surge_rasters.py
-
-# Generate pluvial (rainfall) AEP rasters
-python notebooks/TC_event_AEP_pluvial_rasters.py
-
-# Generate fluvial (river) AEP rasters
-python notebooks/TC_event_AEP_fluvial_rasters.py
-
-# Combine tropical cyclone and overall AEP
-python notebooks/AEP_rasters_TC_and_overall.py
-```
-
-### Recreating Paper Figures
-
-Generate publication figures using the Jupyter notebooks in `reports/figures/`:
-
-```bash
-# Main text figures
-jupyter notebook "reports/figures/Figs. 5. 6, 7, 8, 9. 13.ipynb"
-jupyter notebook "reports/figures/Figures10,11,12.ipynb"
-
-# Appendix figures
-python reports/figures/Fig. A2.py
-python reports/figures/Fig. A3.py
-```
-
-Pre-generated PDFs of key figures are also available in the same directory.
-
 ## Citation
 
 If you use this code or methodology in your research, please cite:
@@ -210,26 +174,10 @@ If you use this code or methodology in your research, please cite:
   year={2025}
 }
 ```
-
-## Related Work
-
-This extended JPM framework builds upon and contributes to several research areas:
-
-- **Compound Flood Risk Assessment**: Moving beyond copula-based driver co-occurrence models to probabilistic characterization of flood response
-- **Coastal Hazard Analysis**: Extending FEMA's surge-only Joint Probability Method to multi-mechanism flooding
-- **Stochastic Hydrology**: Analytical frameworks for watershed-scale flood processes using marked Poisson process theory
-- **Climate Adaptation Planning**: Statistical methods for characterizing compound hazards under changing climate conditions
-- **Design Storm Selection**: Rigorous approaches to identifying representative events for infrastructure design and resilience planning
-
-
 ## Contact
 
 For questions about the code, methodology, or data:
 
 - **Mark S. Bartlett**: Mark.Bartlett@gmail.com
 - **Muthu Narayanaswamy**: mnarayanaswamy@thewaterinstitute.org
-- **Repository Issues**: https://github.com/Mark-S-Bartlett/extended-JPM/issues
 
-## Additional Resources
-
-- **Paper (arXiv)**: https://arxiv.org/abs/2511.03871
