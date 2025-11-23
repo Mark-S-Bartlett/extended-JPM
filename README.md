@@ -1,115 +1,285 @@
+# Extended Joint Probability Method for Compound Flooding
 
-# 🌿 The Extended JPM: Statistical Delineation of Transition Zones and Design Event Selection
-This repository contains code for for a semi-distributed stochastic ecohydrological model for characterizing the long-term statistics of watershed processes---progressing stochastic ecohydrology from the point scale to the watershed scale. It integrates storm event rainfall-runoff (here based on the SCS-CNx method), vegetation-driven evapotranspiration, and soil moisture dynamics to characterize the statistics of runoff generation, baseflow, and evapotranpsiration at the watershed scale. The modeling framework is designed for scenario analysis, calibration with USGS data, and integration with remote sensing and reanalysis datasets.
+This repository contains code and data supporting the paper:
 
-The model and supporting code were developed by Mark S. Bartlett, Elizabeth Cultra, and Amilcare Porporato as part of ongoing research in probabilistic ecohydrology and watershed-scale hydrologic prediction.
+**Bartlett, M. S., Narayanaswamy, M., Geldner, N., Toro, V. N., Begmohammadi, A., Rivera-Hernández, X., Munroe, R., Cultra, E., Colten, C. E., Brody, S. D., & Porporato, A. (2025).** *Extending the Joint Probability Method to Compound Flooding: Statistical Delineation of Transition Zones and Design Event Selection.* arXiv preprint arXiv:2511.03871v2.
 
----
+## Overview
 
-## 📁 Repository Structure
+Compound flooding from the combined effects of extreme storm surge, rainfall, and river flows poses significant risks to infrastructure and communities—as demonstrated by hurricanes Isaac and Harvey. This repository implements a formal extension of the Joint Probability Method (JPM), the foundation of coastal surge risk analysis, to incorporate hydrologic drivers for quantifying compound flood risk and statistically delineating compound flood transition zones (CFTZs).
 
-The respository contains the code for aquiring the data (Baseflow.py, Daymet Data.py and ET_MODIS_data.py), processing the data for the model (Model_Continuous Parameter_Data - FL.py, Model_Continuous Parameter_Data - LA.py,  Model_Long_Term_Calibration_Parameters_FL.py, and  Model_Long_Term_Calibration_Parameters_LA.py # Long-term calibration - LA), and calibrating the model (Model_Calibration.nb ). The data outputs (for the processed data) are in `reports/data`, and the figures of the recent paper 'Stochastic ecohydrological perspective on 
-semi-distributed rainfall-runoff dynamics' may be recreated with the files in `reports/figures`. The code is setup to work with AWS s3 storage, and will need to be modified accordingly to redirect the data storage to a different location.
+### Key Innovations
+
+1. **Unified Probabilistic Framework**: Integrates the likelihood of flood response (not just driver co-occurrence) for both tropical and non-tropical storms within a single probabilistic structure
+
+2. **Statistical Transition Zone Delineation**: Provides rigorous statistical definition of compound flood transition zones based on exceedance probabilities across multiple return periods, rather than event-specific analysis
+
+3. **Design Storm Selection**: Enables systematic identification of design storms that produce specified return period flood depths, moving beyond design based solely on driver likelihoods
+
+4. **Hydrologic-Coastal Coupling**: Incorporates rainfall fields, antecedent soil moisture, and baseflow as stochastic marked Poisson processes alongside coastal storm surge dynamics
+
+### Theoretical Foundation
+
+The extended JPM builds on foundational concepts from stochastic ecohydrology, where storm processes are modeled as marked Poisson processes to derive analytical probabilistic descriptions of watershed states and fluxes. The methodology extends traditional JPM storm variables **x**<sub>JPM</sub> = {*x*<sub>l</sub>, *c*<sub>p</sub>, θ, *R*<sub>max</sub>, *v*<sub>f</sub>} to include:
+
+- **Rainfall fields** *R*(*x*, *y*, *t*): Spatially and temporally varying precipitation during storm events
+- **Antecedent soil moisture** *s*<sub>0</sub>: Pre-storm watershed wetness conditions
+- **Baseflow** *Q*<sub>b</sub>: Initial river discharge influencing fluvial flood potential
+
+This extension enables probabilistic characterization of flood response across the full spectrum of compound flooding mechanisms: coastal surge, pluvial (rainfall-driven), and fluvial (river-driven) flooding.
+
+## Repository Structure
 
 ```
-stoch-ecohydro-runoff/
-└── stoch-ecohydro-runoff-main/
-    ├── notebooks/                  # Scripts and notebooks for data setup, model calibration, and ET data preparation
-    │   ├── Baseflow_Data.py                        # Baseflow extraction and processing
-    │   ├── CN Values Traditional.ipynb             # Curve Number analysis
-    │   ├── DayMet Data.py                          # Processing of DayMet rainfall input
-    │   ├── ET_MODIS_Data.py                        # MODIS ET data integration
-    │   ├── Model_Calibration.nb                    # Mathematica notebook for parameter fitting
-    │   ├── Model_Continuous Parameter_Data - FL.py # Calibration for Florida site
-    │   ├── Model_Continuous Parameter_Data - LA.py # Calibration for Louisiana site
-    │   ├── Model_Long_Term_Calibration_Parameters_FL.py # Long-term calibration - FL
-    │   └── Model_Long_Term_Calibration_Parameters_LA.py # Long-term calibration - LA
-    │   └── NSE_mapper.ipynb  #                     # Spatial mapping of NSE
-    ├── reports/                    # Data and figures used in analysis and publication
-    │   ├── data/
-    │   │   ├── USGS_gage_event_rainfall_jacksonville.csv #output from running the Model_Continuous Paramter_Data Notebook
-    │   │   ├── USGS_gage_event_rainfall_lwi-transition-zone.csv #output from running the Model_Continuous Paramter_Data Notebook
-    │   │   ├── USGS_gage_event_runoff_jacksonville.csv #output from running the Model_Continuous Paramter_Data Notebook
-    │   │   ├── USGS_gage_event_runoff_lwi-transition-zone.csv #output from running the Model_Continuous Paramter_Data Notebook
-    │   │   ├── USGS_gage_hydro_variables_jacksonville.csv #output from running the Model_Continuous Paramter_Data Notebook
-    │   │   ├── USGS_gage_hydro_variables_lwi-transition-zone.csv #output from running the Model_Continuous Paramter_Data Notebook
-    │   │   ├── USGS_gage_hydro_variables_w_year_jacksonville.csv  #output from running the Model_Continuous Paramter_Data Notebook
-    │   │   ├── USGS_gage_rain_stats_jacksonville.csv #output from running the Model_Continuous Paramter_Data Notebook
-    │   │   └── USGS_gage_rain_stats_lwi-transition-zone.csv #output from running the Model_Continuous Paramter_Data Notebook
-    │   └── figures/
-    |       ├── Figures 3, 5, 6, 7.nb
-    │       ├── Figure_4_AND_C1.nb
-    │       ├── Figure_8.nb
-    │       ├── Figure_9.nb
-    |       ├── Figures 10, 11.ipynb
-    |       ├── Figure 12.nb
-    │       ├── Figures_13_AND_14.nb
-    │       └── Figures_15_AND_16.nb
-    └── src/                        # Source code for data access, processing, and utilities
-        └── data/
-            ├── __init__.py
-            ├── noaa_datasets.py       # Methods for handling NOAA climate datasets
-            ├── noaa_ftp.py            # FTP handling for NOAA data
-            ├── utils.py               # General utility functions
-            ├── utils_ET.py            # Functions for handling evapotranspiration data
-            ├── utils_files.py         # File parsing and management tools
-            ├── utils_geo.py           # GIS utilities for spatial data
-            └── utils_statistics.y     # Statistical analysis functions
+extended-JPM/
+├── notebooks/                                   # Annual Exceedance Probability (AEP) raster generation
+│   ├── AEP_rasters_TC_and_overall.py           # Combined tropical cyclone and overall AEP
+│   ├── TC_event_AEP_fluvial_rasters.py         # Fluvial (river) flood component AEP
+│   ├── TC_event_AEP_pluvial_rasters.py         # Pluvial (rainfall) flood component AEP
+│   └── TC_event_AEP_storm_surge_rasters.py     # Storm surge component AEP
+│
+├── reports/                                     # Analysis outputs and publication materials
+│   ├── data/                                    # Processed data and results
+│   │   ├── CFTZ_outline_10_yr.geojson          # 10-year return period CFTZ boundary
+│   │   ├── CFTZ_outline_50_yr.geojson          # 50-year return period CFTZ boundary
+│   │   ├── CFTZ_outline_100_yr.geojson         # 100-year return period CFTZ boundary
+│   │   ├── CFTZ_outline_500_yr.geojson         # 500-year return period CFTZ boundary
+│   │   ├── flood_zones_FeaturesToJSON.geojson  # Flood zone delineations
+│   │   ├── FigureA2_Data.txt                   # Data for appendix figure A2
+│   │   ├── Fig_A3_Data_18TCs34GagesUncertaintyQuantification.xlsx
+│   │   └── HMS_re_calibration.xlsx             # HMS model recalibration parameters
+│   │
+│   └── figures/                                 # Scripts and PDFs for paper figures
+│       ├── Compound-Flooding.pdf               # Compound flooding illustration
+│       ├── Fig. A2.py                          # Appendix figure A2 generation
+│       ├── Fig. A3.py                          # Appendix figure A3 generation
+│       ├── Figs. 5. 6, 7, 8, 9. 13.ipynb       # Main text figures 5-9, 13
+│       ├── Figures10,11,12.ipynb               # Main text figures 10-12
+│       ├── Non-tropical-Contributation.pdf     # Non-tropical storm contribution
+│       ├── transects.pdf                       # Cross-sectional flood transects
+│       ├── transition_compare.pdf              # CFTZ comparison analysis
+│       ├── transition_panels.pdf               # Multi-panel CFTZ visualization
+│       └── transition_percent_panels.pdf       # Percentage-based CFTZ analysis
+│
+├── src/                                         # Source code modules
+│   └── data/
+│       └── __init__.py
+│
+└── README.md
 ```
 
----
+## Methodology
 
-## 🚀 Key Features
+### Extended JPM Formulation
 
-While established semi-distributed models are foundational for representing spatial heterogeneity and upscaled watershed dynamics, they have not been integrated with stochastic ecohydrology or extended to yield analytical, probabilistic descriptions of watershed-scale soil moisture and fluxes. This model addresses that gap by providing a stochastic ecohydrological perspective on semi-distributed rainfall–runoff dynamics, unifying three previously distinct modeling paradigms:
-- **Semi-distributed heterogenity structure** The model incorporates both multiple conceptual soil layers and spatial heterogeneity from semi-distributed modeling. This spatial heterogeneity is defined either implicitly by PDFs or explicitly through indices (such as the topographic wetness index) calculated at each watershed point based on watershed attributes.  Based on this description of spatial heterogeneity, we formalize point-process upscaling using a mean-field approximation from statistical physics..
-- **SCS-CN runof curve integration** The model adopts an extended version of the SCS-CN method (called the SCS-CNx method) as the semi-distributed component of the framework. The underlying spatial heterogeneity of the SCS-CN method then directly links point-scale processes to upscaled (unit-area) counterparts. This upscaling produces both the SCS-CN and SCS-CNx rainfall-runoff curves and yields upscaled baseflow and evapotranspiration fluxes consistent with the implicit spatial structure of the SCS-CN method. These upscaled fluxes are then coupled with stochastic ecohydrological modeling..
-- **Stochastic ecohydrological coupling** Point-scale processes (e.g., evapotranspiration and soil moisture dynamics) are described using minimalist stochastic ecohydrology formulations. These are upscaled based on the spatial heterogeneity assumed by the SCS-CN method. This coupling enables continuous interstorm ecohydrological processes to interact with storm-event rainfall-runoff processes within a unified watershed-scale analytical framework. Techniques from stochastic ecohydrology are used to derive analytical PDFs for watershed state variables and fluxes. Ecohydrological relationships---such as watershed scale Budyko-type curves---emerge naturally as internal outcomes of the coupled system, rather than being imposed externally.
+The extended JPM formulates the annual maximum flood depth cumulative distribution function (CDF) by:
 
-As a result, the framework links SCS-CN runoff generation to fundamental stochastic ecohydrological variables such as PET, LAI, plant wilting point, the Budyko dryness index, storm intermittency, and the storage index (effective soil depth over the average rainfall per storm event). These variables emerge from the merged semi-distributed, SCS-CN, and ecohydrological model structure, supporting physically interpretable upscaling of stochastic ecohydrology to the watershed scale.
+1. **Storm Frequency Integration**: Combining tropical and non-tropical storm arrival rates with appropriate probability weighting based on climatological frequencies
 
----
+2. **Joint Probability Structure**: Integrating flood response models over the joint probability distribution of meteorological (storm surge parameters, rainfall) and hydrologic variables (antecedent soil moisture, baseflow)
 
-## 📦 Requirements
+3. **Stochastic Process Representation**: Treating hydrologic drivers as stochastic variables with explicit probabilistic structure derived from marked Poisson process theory, connecting to the broader stochastic hydrology literature
 
-The code is modular and can be run with standard Python tools and packages. In the future a `requirements.txt` will be included. Required packaged include but are not limited to
+The mathematical framework enables:
+- **Statistical CFTZ delineation** based on exceedance probabilities for multiple return periods
+- **Design storm identification** that produces target return period flood depths
+- **Quantification of compound interactions** that modify flood risk compared to single-driver analysis
 
-- `numpy`
-- `pandas`
-- `xarray`
-- `matplotlib`
-- `rasterio`
-- `geopandas`
-- `scipy`
+### Computational Workflow
 
-For MODIS and DayMet scripts, API access (e.g., to NASA data) or local data downloads may be required.
+The notebooks implement the extended JPM through the following computational steps:
 
----
+1. **Component AEP Calculation** (`TC_event_AEP_*_rasters.py`): Generate spatially-explicit annual exceedance probability rasters for each flood mechanism (storm surge, pluvial, fluvial) by integrating over the joint distribution of relevant drivers
 
-## 📝 Usage
+2. **Combined AEP Synthesis** (`AEP_rasters_TC_and_overall.py`): Integrate tropical cyclone and non-tropical contributions to produce overall flood depth exceedance probability surfaces
 
-1. Clone or download the repository.
-2. Install dependencies.
-3. Run Jupyter and Mathematica notebooks in `notebooks/` or Python scripts to:
-   - Preprocess rainfall and ET data
-   - Calibrate model parameters
+3. **CFTZ Delineation** (data processing): Identify transition zones where compound interactions significantly modify flood depths compared to single-driver scenarios, at multiple return periods (10, 50, 100, 500 years)
 
----
+4. **Visualization and Analysis** (figures notebooks): Generate publication-quality figures showing spatial patterns of compound flood risk, transition zone extents, and mechanism contributions
 
-## 📚 Citation
+## Case Study: Lake Maurepas, Louisiana
 
-If you use this code in a publication, please cite:
+The methodology is demonstrated for the coastal region around Lake Maurepas, Louisiana, where results show:
 
-Bartlett, M. S., Cultra, E., Geldner, N., & Porporato, A. (2025). *Stochastic ecohydrological perspective on semi-distributed rainfall–runoff dynamics*.
+- **CFTZ Extent**: More than double the area of prior event-specific delineations, demonstrating the importance of statistical rather than single-event analysis
 
-For data citation see the paper, which includes:
-- USGS Water Data for the Nation:  
-  U.S. Geological Survey, 2016, [DOI: 10.5066/F7P55KJN](https://doi.org/10.5066/F7P55KJN)
-- MODIS ET:  
-  Running, S. et al. (2021), [DOI: 10.5067/MODIS/MOD16A3GF.061](https://doi.org/10.5067/MODIS/MOD16A3GF.061)
+- **Compound Interactions**: Increase flood depths by up to 0.7 meters (2.25 feet) compared to coastal-only scenarios, with spatial variation in the relative importance of surge, pluvial, and fluvial mechanisms
 
----
+- **Multi-Hazard Characterization**: Provides return period flood depth maps that properly account for the joint occurrence of multiple drivers and their interactions
 
-## 📬 Contact
+- **Design Storm Insights**: Identifies that design storms for compound flooding differ systematically from those based on driver likelihoods alone
 
-For questions, contact Mark S. Bartlett.
+## Installation
+
+### Requirements
+
+The code requires standard Python scientific computing packages and geospatial libraries:
+
+```
+numpy
+pandas
+matplotlib
+scipy
+geopandas
+rasterio
+shapely
+jupyter
+```
+
+Additional requirements:
+- Python 3.8 or higher
+- Sufficient memory for raster processing (16+ GB recommended)
+- Geospatial data processing capabilities
+
+A comprehensive `requirements.txt` will be added in future versions.
+
+### Setup
+
+1. Clone the repository:
+```bash
+git clone https://github.com/Mark-S-Bartlett/extended-JPM.git
+cd extended-JPM
+```
+
+2. Install Python dependencies:
+```bash
+pip install numpy pandas matplotlib scipy geopandas rasterio shapely jupyter
+```
+
+3. Verify installation by opening a Jupyter notebook:
+```bash
+jupyter notebook
+```
+
+## Usage
+
+### Generating AEP Rasters
+
+Run the Python scripts in the `notebooks/` directory to generate annual exceedance probability rasters for each flood mechanism:
+
+```python
+# Generate storm surge AEP rasters
+python notebooks/TC_event_AEP_storm_surge_rasters.py
+
+# Generate pluvial (rainfall) AEP rasters
+python notebooks/TC_event_AEP_pluvial_rasters.py
+
+# Generate fluvial (river) AEP rasters
+python notebooks/TC_event_AEP_fluvial_rasters.py
+
+# Combine tropical cyclone and overall AEP
+python notebooks/AEP_rasters_TC_and_overall.py
+```
+
+### Analyzing CFTZ Boundaries
+
+The compound flood transition zone boundaries for different return periods are available as GeoJSON files in `reports/data/`:
+
+- `CFTZ_outline_10_yr.geojson` - 10-year return period
+- `CFTZ_outline_50_yr.geojson` - 50-year return period
+- `CFTZ_outline_100_yr.geojson` - 100-year return period
+- `CFTZ_outline_500_yr.geojson` - 500-year return period
+
+These can be loaded with standard GIS tools or geopandas:
+
+```python
+import geopandas as gpd
+
+# Load 100-year CFTZ boundary
+cftz_100 = gpd.read_file('reports/data/CFTZ_outline_100_yr.geojson')
+```
+
+### Recreating Paper Figures
+
+Generate publication figures using the Jupyter notebooks in `reports/figures/`:
+
+```bash
+# Main text figures
+jupyter notebook "reports/figures/Figs. 5. 6, 7, 8, 9. 13.ipynb"
+jupyter notebook "reports/figures/Figures10,11,12.ipynb"
+
+# Appendix figures
+python reports/figures/Fig. A2.py
+python reports/figures/Fig. A3.py
+```
+
+Pre-generated PDFs of key figures are also available in the same directory.
+
+## Citation
+
+If you use this code or methodology in your research, please cite:
+
+**Extended JPM Paper:**
+```bibtex
+@article{bartlett2025compound,
+  title={Extending the Joint Probability Method to Compound Flooding: Statistical Delineation of Transition Zones and Design Event Selection},
+  author={Bartlett, Mark S. and Narayanaswamy, Muthu and Geldner, Nicholas and Toro, Valeria N. and Begmohammadi, Arezoo and Rivera-Hern{\'a}ndez, Xochitl and Munroe, Robert and Cultra, Elizabeth and Colten, Craig E. and Brody, Samuel D. and Porporato, Amilcare},
+  journal={arXiv preprint arXiv:2511.03871},
+  year={2025}
+}
+```
+
+**Stochastic Ecohydrology Foundation:**
+```bibtex
+@article{bartlett2025stochastic,
+  title={Stochastic Ecohydrological Perspective on Semi-Distributed Rainfall–Runoff Dynamics},
+  author={Bartlett, Mark S. and Cultra, Elizabeth and Geldner, Nicholas and Porporato, Amilcare},
+  journal={Water Resources Research},
+  year={2025}
+}
+```
+
+## Related Work
+
+This extended JPM framework builds upon and contributes to several research areas:
+
+- **Compound Flood Risk Assessment**: Moving beyond copula-based driver co-occurrence models to probabilistic characterization of flood response
+- **Coastal Hazard Analysis**: Extending FEMA's surge-only Joint Probability Method to multi-mechanism flooding
+- **Stochastic Hydrology**: Analytical frameworks for watershed-scale flood processes using marked Poisson process theory
+- **Climate Adaptation Planning**: Statistical methods for characterizing compound hazards under changing climate conditions
+- **Design Storm Selection**: Rigorous approaches to identifying representative events for infrastructure design and resilience planning
+
+## Authors and Affiliations
+
+**Mark S. Bartlett** (Corresponding Author)  
+The Water Institute, Baton Rouge, Louisiana, USA  
+Princeton University, Princeton, New Jersey, USA  
+Email: Mark.Bartlett@gmail.com
+
+**Muthu Narayanaswamy** (Corresponding Author)  
+The Water Institute, Baton Rouge, Louisiana, USA  
+Email: mnarayanaswamy@thewaterinstitute.org
+
+**Contributors:**
+
+- **Nicholas Geldner** - The Water Institute / Barbara Geldner Foundation
+- **Valeria N. Toro** - The Water Institute
+- **Arezoo Begmohammadi** - The Water Institute
+- **Xochitl Rivera-Hernández** - The Water Institute
+- **Robert Munroe** - The Water Institute, Coastal Engineering and Adaptation Solutions (CEAS)
+- **Elizabeth Cultra** - The Water Institute
+- **Craig E. Colten** - Department of Political Science, Purdue University
+- **Samuel D. Brody** - Edwardson School of Industrial Engineering, Purdue University
+- **Amilcare Porporato** - Princeton University (Civil and Environmental Engineering, High Meadows Environmental Institute)
+
+## Funding and Acknowledgments
+
+This work was developed as part of research in probabilistic ecohydrology, compound flood risk assessment, and coastal resilience planning. The stochastic ecohydrological foundation was developed in collaboration with Princeton University's Department of Civil and Environmental Engineering and High Meadows Environmental Institute.
+
+## License
+
+[License information to be added]
+
+## Contact
+
+For questions about the code, methodology, or data:
+
+- **Mark S. Bartlett**: Mark.Bartlett@gmail.com
+- **Muthu Narayanaswamy**: mnarayanaswamy@thewaterinstitute.org
+- **Repository Issues**: https://github.com/Mark-S-Bartlett/extended-JPM/issues
+
+## Additional Resources
+
+- **Paper (arXiv)**: https://arxiv.org/abs/2511.03871
+- **The Water Institute**: https://thewaterinstitute.org/
+- **Princeton Ecohydrology Group**: https://ecohydro.princeton.edu/
