@@ -2,7 +2,7 @@
 
 This repository contains code and data supporting the paper:
 
-**Bartlett, M. S., Narayanaswamy, M., Geldner, N., Toro, V. N., Begmohammadi, A., Rivera-Hernández, X., Munroe, R., Cultra, E., Colten, C. E., Brody, S. D., & Porporato, A. (2025).** *Extending the Joint Probability Method to Compound Flooding: Statistical Delineation of Transition Zones and Design Event Selection.* arXiv preprint arXiv:2511.03871v2.
+**Mark S. Bartlett, Nathan Geldner, Zach Cobell, Luis Partida, Ovel Diaz, David R. Johnson, Hanbeen Kim, Brett McMann, Gabriele Villarini, Shubra Misra, Hugh J. Roberts, Muthukumar Narayanaswamy** *Extending the Joint Probability Method to Compound Flooding: Statistical Delineation of Transition Zones and Design Event Selection.* arXiv preprint arXiv:2511.03871v2.
 
 ## Overview
 
