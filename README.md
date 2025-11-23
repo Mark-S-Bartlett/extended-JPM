@@ -23,7 +23,7 @@ Compound flooding from the combined effects of extreme storm surge, rainfall, an
 The extended JPM builds on foundational concepts from stochastic ecohydrology, where storm processes are modeled as marked Poisson processes to derive analytical probabilistic descriptions of watershed states and fluxes. The methodology extends traditional JPM storm variables **x**<sub>JPM</sub> = {*x*<sub>l</sub>, *c*<sub>p</sub>, θ, *R*<sub>max</sub>, *v*<sub>f</sub>} to include:
 
 - **Rainfall fields** *R*(*x*, *y*, *t*): Spatially and temporally varying precipitation during storm events
-- **Antecedent soil moisture** *s*<sub>0</sub>: Pre-storm watershed wetness conditions
+- **Antecedent soil moisture** *s*: Pre-storm watershed wetness conditions
 - **Baseflow** *Q*<sub>b</sub>: Initial river discharge influencing fluvial flood potential
 
 This extension enables probabilistic characterization of flood response across the full spectrum of compound flooding mechanisms: coastal surge, pluvial (rainfall-driven), and fluvial (river-driven) flooding.
@@ -46,20 +46,15 @@ extended-JPM/
 │   │   ├── CFTZ_outline_500_yr.geojson         # 500-year return period CFTZ boundary
 │   │   ├── flood_zones_FeaturesToJSON.geojson  # Flood zone delineations
 │   │   ├── FigureA2_Data.txt                   # Data for appendix figure A2
+│   │   ├── prob_masses.csv                     # Probability weights for quantized JPM distribution events
 │   │   ├── Fig_A3_Data_18TCs34GagesUncertaintyQuantification.xlsx
 │   │   └── HMS_re_calibration.xlsx             # HMS model recalibration parameters
 │   │
 │   └── figures/                                 # Scripts and PDFs for paper figures
-│       ├── Compound-Flooding.pdf               # Compound flooding illustration
 │       ├── Fig. A2.py                          # Appendix figure A2 generation
 │       ├── Fig. A3.py                          # Appendix figure A3 generation
 │       ├── Figs. 5. 6, 7, 8, 9. 13.ipynb       # Main text figures 5-9, 13
-│       ├── Figures10,11,12.ipynb               # Main text figures 10-12
-│       ├── Non-tropical-Contributation.pdf     # Non-tropical storm contribution
-│       ├── transects.pdf                       # Cross-sectional flood transects
-│       ├── transition_compare.pdf              # CFTZ comparison analysis
-│       ├── transition_panels.pdf               # Multi-panel CFTZ visualization
-│       └── transition_percent_panels.pdf       # Percentage-based CFTZ analysis
+│       └──Figures10,11,12.ipynb               # Main text figures 10-12
 │
 ├── src/                                         # Source code modules
 │   └── data/
