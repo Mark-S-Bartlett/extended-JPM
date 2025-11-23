@@ -171,24 +171,6 @@ python notebooks/TC_event_AEP_fluvial_rasters.py
 python notebooks/AEP_rasters_TC_and_overall.py
 ```
 
-### Analyzing CFTZ Boundaries
-
-The compound flood transition zone boundaries for different return periods are available as GeoJSON files in `reports/data/`:
-
-- `CFTZ_outline_10_yr.geojson` - 10-year return period
-- `CFTZ_outline_50_yr.geojson` - 50-year return period
-- `CFTZ_outline_100_yr.geojson` - 100-year return period
-- `CFTZ_outline_500_yr.geojson` - 500-year return period
-
-These can be loaded with standard GIS tools or geopandas:
-
-```python
-import geopandas as gpd
-
-# Load 100-year CFTZ boundary
-cftz_100 = gpd.read_file('reports/data/CFTZ_outline_100_yr.geojson')
-```
-
 ### Recreating Paper Figures
 
 Generate publication figures using the Jupyter notebooks in `reports/figures/`:
@@ -239,35 +221,6 @@ This extended JPM framework builds upon and contributes to several research area
 - **Climate Adaptation Planning**: Statistical methods for characterizing compound hazards under changing climate conditions
 - **Design Storm Selection**: Rigorous approaches to identifying representative events for infrastructure design and resilience planning
 
-## Authors and Affiliations
-
-**Mark S. Bartlett** (Corresponding Author)  
-The Water Institute, Baton Rouge, Louisiana, USA  
-Email: Mark.Bartlett@gmail.com
-
-**Muthu Narayanaswamy** (Corresponding Author)  
-The Water Institute, Baton Rouge, Louisiana, USA  
-Email: mnarayanaswamy@thewaterinstitute.org
-
-**Contributors:**
-
-- **Nicholas Geldner** - The Water Institute / Barbara Geldner Foundation
-- **Valeria N. Toro** - The Water Institute
-- **Arezoo Begmohammadi** - The Water Institute
-- **Xochitl Rivera-Hernández** - The Water Institute
-- **Robert Munroe** - The Water Institute, Coastal Engineering and Adaptation Solutions (CEAS)
-- **Elizabeth Cultra** - The Water Institute
-- **Craig E. Colten** - Department of Political Science, Purdue University
-- **Samuel D. Brody** - Edwardson School of Industrial Engineering, Purdue University
-- **Amilcare Porporato** - Princeton University (Civil and Environmental Engineering, High Meadows Environmental Institute)
-
-## Funding and Acknowledgments
-
-This work was developed as part of research in probabilistic ecohydrology, compound flood risk assessment, and coastal resilience planning. The stochastic ecohydrological foundation was developed in collaboration with Princeton University's Department of Civil and Environmental Engineering and High Meadows Environmental Institute.
-
-## License
-
-[License information to be added]
 
 ## Contact
 
@@ -280,5 +233,3 @@ For questions about the code, methodology, or data:
 ## Additional Resources
 
 - **Paper (arXiv)**: https://arxiv.org/abs/2511.03871
-- **The Water Institute**: https://thewaterinstitute.org/
-- **Princeton Ecohydrology Group**: https://ecohydro.princeton.edu/
