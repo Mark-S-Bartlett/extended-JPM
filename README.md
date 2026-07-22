@@ -2,31 +2,69 @@
 
 This repository contains code and data supporting the paper:
 
-**Mark S. Bartlett, Nathan Geldner, Zach Cobell, Luis Partida, Ovel Diaz, David R. Johnson, Hanbeen Kim, Brett McMann, Gabriele Villarini, Shubra Misra, Hugh J. Roberts, Muthukumar Narayanaswamy** *Extending the Joint Probability Method to Compound Flooding: Statistical Delineation of Transition Zones and Design Event Selection.* arXiv preprint arXiv:2511.03871v2.
+**Mark S. Bartlett, Nathan Geldner, Hugh J. Roberts, Zach Cobell, Brett McMann,
+Luis Partida, Ovel Diaz, David R. Johnson, Hanbeen Kim, Gabriele Villarini,
+Shubhra Misra, Muthukumar Narayanaswamy.** *Extending the Joint Probability
+Method to Compound Flooding: Statistical Delineation of Transition Zones and
+Design Event Selection.* arXiv preprint arXiv:2511.03871v2 (under review,
+*Water Resources Research*).
 
 ## Overview
 
-Compound flooding from the combined effects of extreme storm surge, rainfall, and river flows poses significant risks to infrastructure and communities—as demonstrated by hurricanes Isaac and Harvey. This repository contains the code for the data analysis and figures documenting the pilot study demonstrating a formal extension of the Joint Probability Method (JPM). This extemsion includes linking the foundation of coastal surge risk analysis to incorporate hydrologic drivers for quantifying compound flood risk, statistically delineating compound flood transition zones (CFTZs), and determining design events.
+Compound flooding from the combined effects of extreme storm surge, rainfall, and
+river flows poses significant hazards to infrastructure and communities—as
+demonstrated by the August 2016 Louisiana flood and Hurricane Isaac (2012). This
+repository contains the code for the data analysis and figures documenting the
+pilot study that demonstrates a probabilistic extension of the Joint Probability
+Method (JPM). The extension links the probabilistic foundation of coastal surge
+hazard analysis to hydrologic drivers, enabling quantification of the compound
+flood-depth distribution, statistical delineation of compound flood transition
+zones (CFTZs), probabilistic flood-depth attribution, and response-based design
+event selection.
 
 ### Key Innovations
 
-1. **Unified Probabilistic Framework**: Integrates the likelihood of the compound flood response from coastal drivers and hydrologic drivers (not just driver co-occurrence) for both tropical and non-tropical storms within a single probabilistic structure
+1. **Unified Probabilistic Framework**: Derives the probability distribution of
+   the compound flood response from both coastal and hydrologic drivers (not just
+   driver co-occurrence), for tropical and non-tropical storms, within a single
+   probabilistic structure.
 
-2. **Statistical Transition Zone Delineation**: Provides statistical definition of compound flood transition zones based on exceedance probabilities across multiple return periods, rather than event-specific analysis
+2. **Statistical Transition Zone Delineation**: Defines compound flood transition
+   zones from the flood-depth exceedance-probability distribution across annual
+   exceedance probabilities (AEPs), rather than from a single event.
 
-3. **Design Storm Selection**: Enables systematic identification of design storms that produce specified return period flood depths, moving beyond design based solely on driver likelihoods
+3. **Probabilistic Flood-Depth Attribution**: Decomposes each AEP flood depth into
+   its hydrologic and coastal-surge contributions, quantifying where and how
+   strongly each mechanism drives the compound response.
 
-4. **Hydrologic-Coastal Coupling**: Incorporates rainfall fields, antecedent soil moisture, and baseflow as stochastic marked Poisson processes alongside coastal storm surge dynamics
+4. **Response-Based Design Storm Selection**: Identifies design storms by
+   conditioning directly on the flood response, yielding storms that produce a
+   target AEP flood depth—moving beyond selection based on driver likelihoods
+   alone.
+
+5. **Hydrologic-Coastal Coupling**: Represents storm arrivals as a marked Poisson
+   process and carries stochastic rainfall fields, antecedent soil moisture,
+   storage capacity, and baseflow alongside coastal storm-surge dynamics.
 
 ### Theoretical Foundation
 
-The extended JPM builds on foundational concepts from stochastic ecohydrology, where storm processes are modeled as marked Poisson processes to derive analytical probabilistic descriptions of watershed states and fluxes. The methodology extends traditional JPM storm variables **x**<sub>JPM</sub> = {*x*<sub>l</sub>, *c*<sub>p</sub>, θ, *R*<sub>max</sub>, *v*<sub>f</sub>} to include:
+The extended JPM builds on stochastic ecohydrology, where storm arrivals are
+modeled as a marked Poisson process to derive analytical probabilistic
+descriptions of watershed states and fluxes. The methodology extends the
+traditional JPM storm variables **x**<sub>JPM</sub> = {*x*<sub>l</sub>,
+*c*<sub>p</sub>, θ, *R*<sub>max</sub>, *v*<sub>f</sub>} to include:
 
-- **Rainfall fields** *R*(*x*, *y*, *t*): Spatially and temporally varying precipitation during storm events
-- **Antecedent soil moisture** *s*<sub>0</sub>: Pre-storm watershed wetness conditions
-- **Baseflow** *Q*<sub>b</sub>: Initial river discharge influencing fluvial flood potential
+- **Rainfall fields** **r**(*t*): Spatially and temporally varying precipitation
+  during storm events
+- **Antecedent soil moisture** *s*: Pre-storm watershed wetness
+- **Storage capacity** *w*: Available soil-water storage governing runoff
+  generation
+- **Baseflow** *q*<sub>b</sub>: Antecedent river discharge influencing fluvial
+  flood potential
 
-This extension enables probabilistic characterization of flood response across the full spectrum of compound flooding mechanisms: coastal surge, pluvial (rainfall-driven), and fluvial (river-driven) flooding.
+This extension enables probabilistic characterization of the flood response
+across the full spectrum of compound flooding mechanisms: coastal surge, pluvial
+(rainfall-driven), and fluvial (river-driven) flooding.
 
 ## Repository Structure
 
@@ -68,18 +106,33 @@ extended-JPM/
 
 ### Extended JPM Formulation
 
-The extended JPM formulates the annual maximum flood depth cumulative distribution function (CDF) by:
+The extended JPM formulates the annual maximum flood-depth cumulative
+distribution function (CDF) by:
 
-1. **Storm Frequency Integration**: Combining tropical and non-tropical storm arrival rates with appropriate probability weighting based on climatological frequencies
+1. **Storm Frequency Integration**: Combining tropical and non-tropical storm
+   arrival rates, weighted by their climatological frequencies, into a single
+   annual flood-depth distribution.
 
-2. **Joint Probability Structure**: Integrating flood response models over the joint probability distribution of meteorological (storm surge parameters, rainfall) and hydrologic variables (antecedent soil moisture, baseflow)
+2. **Joint Probability Structure**: Integrating the flood response over the joint
+   probability distribution of meteorological drivers (storm-surge parameters and
+   stochastic rainfall fields) and antecedent hydrologic state (soil moisture,
+   storage capacity, and baseflow).
 
-3. **Stochastic Process Representation**: Treating hydrologic drivers as stochastic variables with explicit probabilistic structure derived from marked Poisson process theory, connecting to the broader stochastic hydrology literature
+3. **Stochastic Process Representation**: Representing storm arrivals as a marked
+   Poisson process—the shared foundation of the JPM and stochastic
+   ecohydrology—and describing the hydrologic drivers as stochastic states with
+   explicit probabilistic structure, connecting the event-scale JPM to the
+   long-term stochastic hydrology literature.
 
 The mathematical framework enables:
-- **Statistical CFTZ delineation** based on exceedance probabilities for multiple return periods
-- **Design storm identification** that produces target return period flood depths
-- **Quantification of compound interactions** that modify flood risk compared to single-driver analysis
+- **Statistical CFTZ delineation** based on flood-depth exceedance probabilities
+  across annual exceedance probabilities (AEPs)
+- **Probabilistic flood-depth attribution** decomposing each AEP depth into
+  hydrologic and coastal-surge contributions
+- **Response-based design storm selection** that conditions directly on the flood
+  response to identify storms producing a target AEP flood depth
+- **Quantification of compound interactions** that increase flood hazard relative
+  to single-driver analysis
 
 ### Computational Workflow
 
@@ -89,43 +142,39 @@ The notebooks implement the extended JPM through the following computational ste
 
 2. **Combined AEP Synthesis** (`AEP_rasters_TC_and_overall.py`): Integrate tropical cyclone and non-tropical contributions to produce overall flood depth exceedance probability surfaces
 
-3. **CFTZ Delineation** (data processing): Identify transition zones where compound interactions significantly modify flood depths compared to single-driver scenarios, at multiple return periods (10, 50, 100, 500 years)
-
-4. **Visualization and Analysis** (figures notebooks): Generate publication-quality figures showing spatial patterns of compound flood risk, transition zone extents, and mechanism contributions
+3. **Visualization and Analysis** (figures notebooks under the reports folder): Generate publication-quality figures showing spatial patterns of compound flood risk, transition zone extents, and mechanism contributions
 
 ## Case Study: Lake Maurepas, Louisiana
 
-The methodology is demonstrated for the coastal region around Lake Maurepas, Louisiana, where results show:
+The methodology is demonstrated for the coastal region around Lake Maurepas,
+Louisiana, where results show:
 
-- **CFTZ Extent**: More than double the area of prior event-specific delineations, demonstrating the importance of statistical rather than single-event analysis
+- **CFTZ Extent**: The statistically defined compound flood transition zone is
+  more than double the area of prior event-based delineations (2038 km² vs.
+  938 km²), demonstrating the importance of characterizing the full flood-depth
+  distribution rather than a single event.
 
-- **Compound Interactions**: Increase flood depths by up to 0.7 meters (2.25 feet) compared to coastal-only scenarios, with spatial variation in the relative importance of surge, pluvial, and fluvial mechanisms
+- **Compound Interactions**: Compound processes increase flood depths by up to
+  0.7 m relative to the maximum of the individually simulated pluvial-, fluvial-,
+  and coastal-only responses, with spatial variation in the relative importance
+  of surge, pluvial, and fluvial mechanisms.
 
-- **Multi-Hazard Characterization**: Provides return period flood depth maps that properly account for the joint occurrence of multiple drivers and their interactions
+- **Probabilistic Hazard Characterization**: Produces annual-exceedance-probability
+  (AEP) flood-depth maps that account for the joint occurrence of multiple drivers
+  and their nonlinear interactions.
 
-- **Design Storm Insights**: Identifies that design storms for compound flooding differ systematically from those based on driver likelihoods alone
+- **Flood-Depth Attribution**: Decomposes each AEP flood depth into its hydrologic
+  and coastal-surge contributions, showing a continuous transition from
+  hydrologically dominated flooding upstream to surge-dominated flooding near the
+  coast, with the greatest attribution variability inside the CFTZ.
+
+- **Response-Based Design Storms**: Shows that design storms conditioned on the
+  flood response differ systematically from those selected on driver likelihoods
+  alone, and identifies multiple equiprobable design storms for a target AEP depth.
 
 ## Installation
 
 ### Requirements
-
-The code requires standard Python scientific computing packages and geospatial libraries:
-
-```
-numpy
-pandas
-matplotlib
-scipy
-geopandas
-rasterio
-shapely
-jupyter
-```
-
-Additional requirements:
-- Python 3.8 or higher
-- Sufficient memory for raster processing (16+ GB recommended)
-- Geospatial data processing capabilities
 
 A comprehensive `requirements.txt` will be added in future versions.
 
@@ -135,16 +184,6 @@ A comprehensive `requirements.txt` will be added in future versions.
 ```bash
 git clone https://github.com/Mark-S-Bartlett/extended-JPM.git
 cd extended-JPM
-```
-
-2. Install Python dependencies:
-```bash
-pip install numpy pandas matplotlib scipy geopandas rasterio shapely jupyter
-```
-
-3. Verify installation by opening a Jupyter notebook:
-```bash
-jupyter notebook
 ```
 
 ## Citation
