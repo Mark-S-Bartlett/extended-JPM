@@ -75,6 +75,10 @@ display(dbutils.fs.ls(f"/mnt/{mount_name}"))
 
 # COMMAND ----------
 
+display(dbutils.fs.ls(f"/mnt/{mount_name}/EJPM-OS-Param-Rainfall-Tests/TCtracksSim/storm_0001/"))
+
+# COMMAND ----------
+
 # MAGIC %md
 # MAGIC #Functions
 

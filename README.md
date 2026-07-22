@@ -50,16 +50,12 @@ extended-JPM/
 │   │   └── HMS_re_calibration.xlsx             # HMS model recalibration parameters
 │   │
 │   └── figures/                                 # Scripts and PDFs for paper figures
-│       ├── Compound-Flooding.pdf               # Compound flooding illustration
-│       ├── Fig. A2.py                          # Appendix figure A2 generation
-│       ├── Fig. A3.py                          # Appendix figure A3 generation
-│       ├── Figs. 5. 6, 7, 8, 9. 13.ipynb       # Main text figures 5-9, 13
-│       ├── Figures10,11,12.ipynb               # Main text figures 10-12
-│       ├── Non-tropical-Contributation.pdf     # Non-tropical storm contribution
-│       ├── transects.pdf                       # Cross-sectional flood transects
-│       ├── transition_compare.pdf              # CFTZ comparison analysis
-│       ├── transition_panels.pdf               # Multi-panel CFTZ visualization
-│       └── transition_percent_panels.pdf       # Percentage-based CFTZ analysis
+│       ├── Compound-Flooding.pdf                 # Compound flooding illustration
+│       ├── Fig. A2.py                            # Appendix figure A2 generation
+│       ├── Fig. A3.py                            # Appendix figure A3 generation
+│       ├── Fig. A114.py                          # Appendix figure A1 and A4 generation
+│       ├── Figures5,6,7,8,9,10,11,12,and16.ipynb # Main text figures 5-12, 16
+│       └── Figures13,14,15.ipynb                 # Main text figures 13-15
 │
 ├── src/                                         # Source code modules
 │   └── data/

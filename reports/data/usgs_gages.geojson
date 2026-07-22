@@ -1,0 +1,724 @@
+{
+ "type": "FeatureCollection",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+  }
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.7812778,
+     30.18925
+    ]
+   },
+   "properties": {
+    "site_no": "073802284",
+    "station_name": "New River Canal east of Sorrento LA",
+    "datum": "NAD83",
+    "huc_cd": "08070204",
+    "gage_alt_ft_navd88": 0.0,
+    "record_span": "2017-2026",
+    "has_Q_dv": false,
+    "dv_Q_period": "uv00060 2017-04-05 to 2026-06-22",
+    "dv_GH_period": "",
+    "uv_GH_period": "",
+    "peak_period": "2017-08-29 to 2024-04-29"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.7862055,
+     30.18936433
+    ]
+   },
+   "properties": {
+    "site_no": "073802282",
+    "station_name": "New River Canal near Sorrento LA",
+    "datum": "NAD83",
+    "huc_cd": "08070204",
+    "gage_alt_ft_navd88": 0.0,
+    "record_span": "1997-2026",
+    "has_Q_dv": false,
+    "dv_Q_period": "",
+    "dv_GH_period": "1997-04-28 to 2026-06-21",
+    "uv_GH_period": "2007-10-01 to 2026-06-22",
+    "peak_period": "1997-04-28 to 2024-11-13"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.819906,
+     30.215194
+    ]
+   },
+   "properties": {
+    "site_no": "073802280",
+    "station_name": "New River north of Sorrento LA",
+    "datum": "NAD83",
+    "huc_cd": "080702040103",
+    "gage_alt_ft_navd88": 0.0,
+    "record_span": "2018-2026",
+    "has_Q_dv": false,
+    "dv_Q_period": "uv00060 2019-12-09 to 2026-06-22",
+    "dv_GH_period": "",
+    "uv_GH_period": "2018-10-29 to 2026-06-22",
+    "peak_period": "2018-12-08 to 2024-04-10"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.8995425,
+     30.2274186
+    ]
+   },
+   "properties": {
+    "site_no": "073802273",
+    "station_name": "Bayou Francois at Hwy 61 near Gonzales LA",
+    "datum": "NAD83",
+    "huc_cd": "08070204",
+    "gage_alt_ft_navd88": 0.0,
+    "record_span": "1997-2026",
+    "has_Q_dv": false,
+    "dv_Q_period": "",
+    "dv_GH_period": "1997-04-29 to 2026-06-21",
+    "uv_GH_period": "2007-10-01 to 2026-06-22",
+    "peak_period": "1997-06-18 to 2024-04-10"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.8700972,
+     30.23741844
+    ]
+   },
+   "properties": {
+    "site_no": "073802245",
+    "station_name": "Black Bayou E of Gonzales LA",
+    "datum": "NAD83",
+    "huc_cd": "08070204",
+    "gage_alt_ft_navd88": 0.0,
+    "record_span": "1997-2026",
+    "has_Q_dv": false,
+    "dv_Q_period": "",
+    "dv_GH_period": "1997-05-02 to 2026-06-21",
+    "uv_GH_period": "2007-10-01 to 2026-06-22",
+    "peak_period": "1997-06-18 to 2025-07-17"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.9169444,
+     30.26944444
+    ]
+   },
+   "properties": {
+    "site_no": "0738022395",
+    "station_name": "Black Bayou at Hwy 621 near Prairieville LA",
+    "datum": "NAD83",
+    "huc_cd": "08070204",
+    "gage_alt_ft_navd88": 0.0,
+    "record_span": "1997-2026",
+    "has_Q_dv": false,
+    "dv_Q_period": "",
+    "dv_GH_period": "1997-11-26 to 2026-06-21",
+    "uv_GH_period": "2007-10-01 to 2026-06-22",
+    "peak_period": "1998-09-12 to 2025-07-17"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.9634442,
+     30.2621648
+    ]
+   },
+   "properties": {
+    "site_no": "0738022295",
+    "station_name": "Grand Goudine at Babin Rd near Duplessis LA",
+    "datum": "NAD83",
+    "huc_cd": "08070204",
+    "gage_alt_ft_navd88": 0.0,
+    "record_span": "1998-2026",
+    "has_Q_dv": false,
+    "dv_Q_period": "",
+    "dv_GH_period": "1998-09-30 to 2026-06-21",
+    "uv_GH_period": "2007-10-01 to 2026-06-22",
+    "peak_period": "1998-09-12 to 2024-11-01"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.861219,
+     30.1732786
+    ]
+   },
+   "properties": {
+    "site_no": "073802225",
+    "station_name": "Bayou Conway near Sorrento LA",
+    "datum": "NAD83",
+    "huc_cd": "08070204",
+    "gage_alt_ft_navd88": 0.0,
+    "record_span": "1998-2026",
+    "has_Q_dv": false,
+    "dv_Q_period": "",
+    "dv_GH_period": "1998-09-30 to 2026-06-21",
+    "uv_GH_period": "2007-10-01 to 2026-06-22",
+    "peak_period": "1998-09-14 to 2024-09-13"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.9187206,
+     30.17077864
+    ]
+   },
+   "properties": {
+    "site_no": "073802220",
+    "station_name": "Panama Canal at Hwy 44 near Gonzales LA",
+    "datum": "NAD83",
+    "huc_cd": "08070204",
+    "gage_alt_ft_navd88": 0.0,
+    "record_span": "1997-2026",
+    "has_Q_dv": false,
+    "dv_Q_period": "",
+    "dv_GH_period": "1997-12-17 to 2026-06-21",
+    "uv_GH_period": "2007-12-20 to 2026-06-22",
+    "peak_period": "1998-09-12 to 2025-03-31"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.6087222,
+     30.30769444
+    ]
+   },
+   "properties": {
+    "site_no": "07380215",
+    "station_name": "Amite River at Hwy 22 near Maurepas LA",
+    "datum": "NAD83",
+    "huc_cd": "08070202",
+    "gage_alt_ft_navd88": -1.38,
+    "record_span": "1967-2026",
+    "has_Q_dv": true,
+    "dv_Q_period": "dv00060 2021-08-20 to 2023-02-16; dv00065 1998-09-30 to 2023-08-07",
+    "dv_GH_period": "1998-09-30 to 2023-08-07",
+    "uv_GH_period": "2007-10-01 to 2026-06-22",
+    "peak_period": "1998-09-12 to 2024-01-28"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.7364889,
+     30.10158889
+    ]
+   },
+   "properties": {
+    "site_no": "07380212",
+    "station_name": "Airline Canal at Blind River near Gramercy LA",
+    "datum": "NAD83",
+    "huc_cd": "08070204",
+    "gage_alt_ft_navd88": 0.0,
+    "record_span": "2020-2026",
+    "has_Q_dv": false,
+    "dv_Q_period": "",
+    "dv_GH_period": "2020-01-30 to 2026-06-21",
+    "uv_GH_period": "2020-01-30 to 2026-06-22",
+    "peak_period": "2021-05-23 to 2024-09-13"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.7792616,
+     30.2754733
+    ]
+   },
+   "properties": {
+    "site_no": "07380200",
+    "station_name": "Amite River near French Settlement LA",
+    "datum": "NAD83",
+    "huc_cd": "08070202",
+    "gage_alt_ft_navd88": -0.91,
+    "record_span": "1950-2026",
+    "has_Q_dv": false,
+    "dv_Q_period": "",
+    "dv_GH_period": "1996-07-04 to 2026-06-21",
+    "uv_GH_period": "2007-10-01 to 2026-06-22",
+    "peak_period": "1950-01-12 to 2024-09-12"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.8598611,
+     30.31825
+    ]
+   },
+   "properties": {
+    "site_no": "07380127",
+    "station_name": "Henderson Bayou Pump Station near Port Vincent LA",
+    "datum": "NAD83",
+    "huc_cd": "08070202",
+    "gage_alt_ft_navd88": 0.0,
+    "record_span": "2015-2026",
+    "has_Q_dv": false,
+    "dv_Q_period": "",
+    "dv_GH_period": "2015-03-01 to 2026-06-21",
+    "uv_GH_period": "2015-02-26 to 2026-06-22",
+    "peak_period": "2015-03-05 to 2024-01-29"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.8837198,
+     30.2974416
+    ]
+   },
+   "properties": {
+    "site_no": "07380126",
+    "station_name": "Henderson Bayou near Port Vincent LA",
+    "datum": "NAD83",
+    "huc_cd": "08070202",
+    "gage_alt_ft_navd88": 0.0,
+    "record_span": "1980-2026",
+    "has_Q_dv": false,
+    "dv_Q_period": "",
+    "dv_GH_period": "1997-11-26 to 2026-06-21",
+    "uv_GH_period": "2007-10-01 to 2026-06-22",
+    "peak_period": "1980-05-19 to 2022-12-30"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.8520419,
+     30.3326939
+    ]
+   },
+   "properties": {
+    "site_no": "07380120",
+    "station_name": "Amite River at Port Vincent LA",
+    "datum": "NAD83",
+    "huc_cd": "08070202",
+    "gage_alt_ft_navd88": -1.36,
+    "record_span": "1946-2026",
+    "has_Q_dv": true,
+    "dv_Q_period": "dv00060 1987-10-01 to 2015-09-29; dv00065 1987-10-01 to 2015-09-29",
+    "dv_GH_period": "1987-10-01 to 2015-09-29",
+    "uv_GH_period": "2007-10-01 to 2026-06-22",
+    "peak_period": "1946-05-19 to 2024-01-28"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.9689897,
+     30.3368601
+    ]
+   },
+   "properties": {
+    "site_no": "07380102",
+    "station_name": "Welsh Gully at J Broussard Rd near Prairieville LA",
+    "datum": "NAD83",
+    "huc_cd": "08070202",
+    "gage_alt_ft_navd88": 0.71,
+    "record_span": "1998-2026",
+    "has_Q_dv": false,
+    "dv_Q_period": "",
+    "dv_GH_period": "2002-03-07 to 2026-06-21",
+    "uv_GH_period": "2007-10-07 to 2026-06-22",
+    "peak_period": "1998-01-10 to 2022-12-30"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.9173216,
+     30.34047129
+    ]
+   },
+   "properties": {
+    "site_no": "07380101",
+    "station_name": "Bayou Manchac near Little Prairie LA",
+    "datum": "NAD83",
+    "huc_cd": "08070202",
+    "gage_alt_ft_navd88": -1.28,
+    "record_span": "1989-2026",
+    "has_Q_dv": false,
+    "dv_Q_period": "",
+    "dv_GH_period": "1994-10-01 to 2026-06-21",
+    "uv_GH_period": "2007-10-01 to 2026-06-22",
+    "peak_period": "1989-07-01 to 2025-05-11"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -91.0942712,
+     30.38241445
+    ]
+   },
+   "properties": {
+    "site_no": "07379960",
+    "station_name": "Dawson Cr at Bluebonnet Blvd near Baton Rouge LA",
+    "datum": "NAD83",
+    "huc_cd": "08070202",
+    "gage_alt_ft_navd88": 0.0,
+    "record_span": "1995-2026",
+    "has_Q_dv": true,
+    "dv_Q_period": "dv00060 2002-10-01 to 2005-09-29",
+    "dv_GH_period": "2002-09-30 to 2026-06-21",
+    "uv_GH_period": "2007-10-01 to 2026-06-22",
+    "peak_period": "1995-08-21 to 2025-03-29"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -91.0914935,
+     30.41796914
+    ]
+   },
+   "properties": {
+    "site_no": "07379100",
+    "station_name": "North Branch Ward Creek at Baton Rouge LA",
+    "datum": "NAD83",
+    "huc_cd": "08070202",
+    "gage_alt_ft_navd88": 0.0,
+    "record_span": "1962-2026",
+    "has_Q_dv": false,
+    "dv_Q_period": "",
+    "dv_GH_period": "2003-09-30 to 2026-06-21",
+    "uv_GH_period": "2007-10-01 to 2026-06-22",
+    "peak_period": "1962-04-29 to 2023-12-01"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -91.0151022,
+     30.35519288
+    ]
+   },
+   "properties": {
+    "site_no": "07379075",
+    "station_name": "Old Ward Crk Div at Highland Rd near Baton Rouge",
+    "datum": "NAD83",
+    "huc_cd": "08070202",
+    "gage_alt_ft_navd88": 0.0,
+    "record_span": "1999-2026",
+    "has_Q_dv": false,
+    "dv_Q_period": "",
+    "dv_GH_period": "2017-12-01 to 2026-06-21",
+    "uv_GH_period": "2017-11-30 to 2026-06-22",
+    "peak_period": "1999-08-09 to 2024-01-27"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -91.1034382,
+     30.4049139
+    ]
+   },
+   "properties": {
+    "site_no": "07379050",
+    "station_name": "Ward Creek at Essen Lane near Baton Rouge LA",
+    "datum": "NAD83",
+    "huc_cd": "08070202",
+    "gage_alt_ft_navd88": 0.0,
+    "record_span": "1962-2026",
+    "has_Q_dv": false,
+    "dv_Q_period": "",
+    "dv_GH_period": "2004-02-05 to 2026-06-21",
+    "uv_GH_period": "2007-10-17 to 2026-06-22",
+    "peak_period": "1962-04-29 to 2023-12-01"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -91.1431618,
+     30.44446855
+    ]
+   },
+   "properties": {
+    "site_no": "07379000",
+    "station_name": "Ward Creek at Government St at Baton Rouge LA",
+    "datum": "NAD83",
+    "huc_cd": "08070202",
+    "gage_alt_ft_navd88": -2.09,
+    "record_span": "1954-2026",
+    "has_Q_dv": true,
+    "dv_Q_period": "dv00060 1954-05-01 to 1967-03-31",
+    "dv_GH_period": "1997-09-30 to 2026-06-21",
+    "uv_GH_period": "2007-12-15 to 2026-06-22",
+    "peak_period": "1954-05-03 to 2023-12-01"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -91.1081603,
+     30.35852615
+    ]
+   },
+   "properties": {
+    "site_no": "07378810",
+    "station_name": "Bayou Fountain at Bluebonnet Blvd near BR LA",
+    "datum": "NAD83",
+    "huc_cd": "08070202",
+    "gage_alt_ft_navd88": 0.0,
+    "record_span": "1995-2026",
+    "has_Q_dv": false,
+    "dv_Q_period": "",
+    "dv_GH_period": "2003-10-10 to 2026-06-21",
+    "uv_GH_period": "2007-10-01 to 2026-06-22",
+    "peak_period": "1995-07-02 to 2025-03-31"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -91.0181576,
+     30.323527
+    ]
+   },
+   "properties": {
+    "site_no": "07378748",
+    "station_name": "Bluff Swamp near Kleinpeter LA",
+    "datum": "NAD83",
+    "huc_cd": "08070202",
+    "gage_alt_ft_navd88": -0.5,
+    "record_span": "1997-2026",
+    "has_Q_dv": false,
+    "dv_Q_period": "",
+    "dv_GH_period": "1997-12-17 to 2026-06-21",
+    "uv_GH_period": "2007-10-01 to 2026-06-22",
+    "peak_period": "1998-01-28 to 2025-05-16"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -91.0209444,
+     30.32138889
+    ]
+   },
+   "properties": {
+    "site_no": "07378746",
+    "station_name": "Bayou Manchac at Alligator B near Kleinpeter LA",
+    "datum": "NAD83",
+    "huc_cd": "08070202",
+    "gage_alt_ft_navd88": -0.5,
+    "record_span": "1997-2026",
+    "has_Q_dv": false,
+    "dv_Q_period": "",
+    "dv_GH_period": "1997-12-16 to 2026-06-21",
+    "uv_GH_period": "2007-10-01 to 2026-06-22",
+    "peak_period": "1998-01-12 to 2024-11-02"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -91.0207222,
+     30.32125
+    ]
+   },
+   "properties": {
+    "site_no": "07378745",
+    "station_name": "Alligator Bayou near Kleinpeter LA",
+    "datum": "NAD83",
+    "huc_cd": "08070204",
+    "gage_alt_ft_navd88": -0.5,
+    "record_span": "1955-2026",
+    "has_Q_dv": false,
+    "dv_Q_period": "",
+    "dv_GH_period": "1999-11-08 to 2026-06-21",
+    "uv_GH_period": "2007-10-01 to 2026-06-22",
+    "peak_period": "1955-04-23 to 2025-05-11"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -91.0073244,
+     30.38685874
+    ]
+   },
+   "properties": {
+    "site_no": "07378722",
+    "station_name": "Claycut Bayou at Antioch Rd near Baton Rouge LA",
+    "datum": "NAD83",
+    "huc_cd": "08070202",
+    "gage_alt_ft_navd88": 0.0,
+    "record_span": "1995-2026",
+    "has_Q_dv": false,
+    "dv_Q_period": "",
+    "dv_GH_period": "",
+    "uv_GH_period": "2008-02-02 to 2026-06-22",
+    "peak_period": "1995-08-18 to 2024-11-01"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -91.044548,
+     30.4407463
+    ]
+   },
+   "properties": {
+    "site_no": "07378650",
+    "station_name": "Jones Cr at Old Hammond Hwy near Baton Rouge LA",
+    "datum": "NAD83",
+    "huc_cd": "08070202",
+    "gage_alt_ft_navd88": 0.0,
+    "record_span": "1962-2026",
+    "has_Q_dv": false,
+    "dv_Q_period": "",
+    "dv_GH_period": "2004-05-17 to 2026-06-21",
+    "uv_GH_period": "2007-10-18 to 2026-06-22",
+    "peak_period": "1962-04-29 to 2023-12-01"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.5511111,
+     30.37655556
+    ]
+   },
+   "properties": {
+    "site_no": "07376300",
+    "station_name": "Tickfaw River near Springfield LA",
+    "datum": "NAD83",
+    "huc_cd": "08070203",
+    "gage_alt_ft_navd88": -1.58,
+    "record_span": "1948-2026",
+    "has_Q_dv": true,
+    "dv_Q_period": "dv00060 2021-08-26 to 2024-10-30",
+    "dv_GH_period": "",
+    "uv_GH_period": "2021-08-25 to 2026-06-22",
+    "peak_period": "1948-03-06 to 2024-01-29"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.3345833,
+     30.44369444
+    ]
+   },
+   "properties": {
+    "site_no": "07375650",
+    "station_name": "Tangipahoa River near Ponchatoula LA",
+    "datum": "NAD83",
+    "huc_cd": "08070205",
+    "gage_alt_ft_navd88": -2.75,
+    "record_span": "1962-2026",
+    "has_Q_dv": true,
+    "dv_Q_period": "dv00060 2022-02-17 to 2024-08-05; dv00065 2013-03-28 to 2026-06-21",
+    "dv_GH_period": "2013-03-28 to 2026-06-21",
+    "uv_GH_period": "2013-03-28 to 2026-06-22",
+    "peak_period": "2014-02-24 to 2025-05-10"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.1548009,
+     30.4040829
+    ]
+   },
+   "properties": {
+    "site_no": "07375230",
+    "station_name": "Tchefuncte River at Madisonville LA",
+    "datum": "NAD83",
+    "huc_cd": "08090201",
+    "gage_alt_ft_navd88": 0.11,
+    "record_span": "1958-2026",
+    "has_Q_dv": true,
+    "dv_Q_period": "dv00060 2021-12-17 to 2024-10-23; dv00065 2004-02-10 to 2026-06-21",
+    "dv_GH_period": "2004-02-10 to 2026-06-21",
+    "uv_GH_period": "2007-10-01 to 2026-06-22",
+    "peak_period": "2004-09-16 to 2024-11-14"
+   }
+  }
+ ]
+}
